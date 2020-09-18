@@ -13,3 +13,11 @@
 #reset-container, h1 {
     text-align: center;
 }
+
+.right, .left {
+    margin: 0 30px;
+}
+
+#reset-button {
+    margin-bottom: 40px;
+}
