@@ -1,23 +1,124 @@
-.hide {
-    display: none;
-}
-.left {
-    float: left;
-}
-.right {
-    float: right;
-}
-.clear {
-    clear: both;
-}
-#reset-container, h1 {
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.right, .left {
-    margin: 0 30px;
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#background {
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#container {
+    width: 50%;
+    z-index: 1;
+}
+
+h1 {
+    margin: 50px 0 20px;
+}
+
+#swishSpan {
+    font-family: 'Dancing Script', cursive;
+}
+
+#brickSpan {
+    text-transform: uppercase;
+    font-family: 'Notable', sans-serif;
+}
+
+#reset-container, h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #reset-button {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+#numResetSpan {
+    text-transform: uppercase;
+}
+
+#num-resets {
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.right, .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 250px;
+    flex-direction: column;
+    margin: 25px 30px 0;
+    padding: 30px;
+    flex-grow: 3;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.goals {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+.possessionIndicator {
+    border: white solid 1px;
+}
+
+button {
+    padding: 20px 20px;
+    border-radius: 50%;
+    color: black;
+    outline: none;
+}
+
+@media (max-width: 960px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        margin-top: 50px;
+    }
+
+    #teamtwo-shoot-button {
+        margin-bottom: 50px;
+    }
 }
