@@ -13,6 +13,7 @@ body {
   display: flex;
   justify-content: center;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 #background {
@@ -35,7 +36,7 @@ h1 {
 }
 
 #game-title {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 #swishSpan {
@@ -69,11 +70,11 @@ h1 {
 
 .rules {
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 input {
-  width: 35%;
+  max-width: 35%;
   height: auto;
   margin: 20px 20px 20px 0;
   margin-left: 20px;

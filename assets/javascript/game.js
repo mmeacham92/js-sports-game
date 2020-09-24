@@ -31,19 +31,8 @@ let winner = document.querySelector("#winner");
 const fieldGoalRate = 60;
 let running = true;
 
-// Ask user for team names and assign to object variables and check
-// // for valid user inputs
-/* teamOneName.textContent = prompt("What is the name of Team One?");
-while (teamOneName.textContent == "")
-  teamOneName.textContent = prompt("Hey! Enter a valid name for Team One!!!");
-
-teamTwoName.textContent = prompt("What is the name of Team Two?");
-while (teamTwoName.textContent == "")
-  teamTwoName.textContent = prompt("Hey! Enter a valid name for Team Two!!!"); */
-
+// Will always give the "visitors" possession first
 leftDiv.classList.add("possessionIndicator");
-
-numGoalsTwo.innerHTML = 9;
 
 // ---------------------------EVENT LISTENERS -------------------------------------------
 
@@ -58,8 +47,10 @@ resetButton.addEventListener("click", function () {
     let teamOneInput = document.querySelector("#teamOneInput");
     let teamTwoInput = document.querySelector("#teamTwoInput");
     // Assign the text content of the team name elements to the value of the inputs
-    teamOneName.textContent = teamOneInput.value;
-    teamTwoName.textContent = teamTwoInput.value;
+    if (teamOneInput.value === "") teamOneName.textContent = "Visitors";
+    else teamOneName.textContent = teamOneInput.value;
+    if (teamTwoInput.value === "") teamTwoName.textContent = "Home";
+    else teamTwoName.textContent = teamTwoInput.value;
     // 'Play' button now becomes a 'Reset' button
     resetButton.textContent = "RESET";
     // hide the input elements and unhide the left and right elements
@@ -85,11 +76,13 @@ shootButtonOne.addEventListener("click", function () {
     let random = generateRandomNumber(100);
     console.log(random);
 
+    // Shoot!!!
     if (fieldGoalRate >= random) {
       numGoalsOne.innerHTML++;
       playSwish();
     } else playBrick();
 
+    // Chekc to see if game is over
     if (Number(numGoalsOne.innerHTML) === 10) {
       gameOver();
       winner.innerHTML = `${teamOneName.textContent} has won the game!`;
@@ -108,14 +101,16 @@ shootButtonTwo.addEventListener("click", function () {
     let random = generateRandomNumber(100);
     console.log(random);
 
+    // Shoot!!!
     if (fieldGoalRate >= random) {
       numGoalsTwo.innerHTML++;
       playSwish();
     } else playBrick();
 
+    // Check to see if the game is over
     if (Number(numGoalsTwo.innerHTML) === 10) {
       gameOver();
-      winner.innerHTML = `${teamTwoName.textContent} has won the game!`;
+      winner.innerHTML = `${teamTwoName.textContent} won the game!`;
     } else changePossession();
   } else alert("Hey! It's not your turn!");
 });
@@ -170,6 +165,7 @@ function generateRandomNumber(max) {
   return number;
 }
 
+// Switches possession of the "ball"
 function toggleTeamDivs() {
   leftDiv.classList.toggle("hide");
   rightDiv.classList.toggle("hide");
