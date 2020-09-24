@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Swish or Brick</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Notable&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
     <div id="container">
-        <h1><span id="swishSpan">Swish</span><span> or </span><span id="brickSpan">Brick</span></h1>
-        <div id="reset-container">
-            <button id="reset-button">RESET</button><br>
-            <span id="numResetSpan" class="hide">number of resets: <span id="num-resets">0</span></span>
+      <h1 id="game-title">
+        <span id="swishSpan">Swish</span><span> or </span
+        ><span id="brickSpan">Brick</span>
+      </h1>
+      <h1 id="winner" class="hide"></h1>
+      <div id="reset-container">
+        <button id="reset-button" type="button">PLAY</button><br />
+        <span id="numResetSpan" class="hide"
+          >number of resets: <span id="num-resets">0</span></span
+        >
+        <form id="inputs">
+          <h5 class="rules">Enter names for both teams!</h5>
+          <h5 class="rules">The first team to reach 10 goals is the winner!</h5>
+          <input id="teamOneInput" type="text" placeholder="Team One Name" />
+          <input id="teamTwoInput" type="text" placeholder="Team Two Name" />
+        </form>
+      </div>
+      <div class="clear"></div>
+      <div id="teams">
+        <div id="left" class="left hide">
+          <h2 id="teamOne">Team 1</h2>
+          <div class="goals">
+            SHOTS TAKEN: <span id="teamone-numshots">0</span><br />
+            GOALS: <span id="teamone-numgoals">0</span>
+          </div>
+          <div>
+            <button id="teamone-shoot-button">SHOOT</button>
+          </div>
         </div>
-        <div class="clear"></div>
-        <div id ="left" class="left">
-            <h2 id="teamOne">
-                Team 1
-            </h2>
-            <div class="goals">
-                SHOTS TAKEN: <span id="teamone-numshots">0</span><br>
-                GOALS: <span id="teamone-numgoals">0</span>
-            </div>
-            <div>
-                <button id="teamone-shoot-button">SHOOT</button>
-            </div>
+        <div id="right" class="right hide">
+          <h2 id="teamTwo">Team 2</h2>
+          <div class="goals">
+            SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br />
+            GOALS: <span id="teamtwo-numgoals">0</span>
+          </div>
+          <div>
+            <button id="teamtwo-shoot-button">SHOOT</button>
+          </div>
         </div>
-        <div id="right" class="right">
-            <h2 id="teamTwo">
-                Team 2
-            </h2>
-            <div class="goals">
-                SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br>
-                GOALS: <span id="teamtwo-numgoals">0</span>
-            </div>
-            <div>
-                <button id="teamtwo-shoot-button">SHOOT</button>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <img id="background" src="assets/images/main-background.jpg">
+      </div>
 
+      <div class="clear"></div>
+    </div>
+    <img id="background" src="assets/images/main-background.jpg" />
 
     <audio id="swish" src="./assets/audio/swish.mp3"></audio>
     <audio id="brick" src="./assets/audio/brick.wav"></audio>
     <script src="./assets/javascript/game.js"></script>
-</body>
+  </body>
 </html>
